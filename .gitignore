@@ -4,3 +4,10 @@ target/
 .classpath
 .project
 .settings/
+
+.allure/
+allure-results/
+target/
+
+src/test/java/co/edu/javeriana/steps/OrangeHRMSteps.java
+src/test/resources/features/orangehrm.feature
