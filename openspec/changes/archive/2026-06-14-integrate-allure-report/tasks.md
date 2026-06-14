@@ -6,7 +6,7 @@
 ## 2. Cucumber Integration
 
 - [x] 2.1 Update Cucumber configuration (via `junit-platform.properties` or Surefire plugin properties) to register the `io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm` plugin.
-- [ ] 2.2 Verify that running `mvn clean test` generates files in `target/allure-results`.
+- [x] 2.2 Verify that running `mvn clean test` generates files in `target/allure-results`.
 
 ## 3. Failure Screenshots Hook
 
@@ -16,6 +16,6 @@
 
 ## 4. Verification
 
-- [ ] 4.1 Intentionally fail a test scenario locally.
-- [ ] 4.2 Run `mvn clean test` followed by `mvn allure:serve`.
-- [ ] 4.3 Verify the HTML report opens in the browser, shows the failure, and includes the attached screenshot.
+- [x] 4.1 Intentionally fail a test scenario locally.
+- [x] 4.2 Run `mvn clean test` followed by `mvn allure:serve`.
+- [x] 4.3 Verify the HTML report opens in the browser, shows the failure, and includes the attached screenshot.
