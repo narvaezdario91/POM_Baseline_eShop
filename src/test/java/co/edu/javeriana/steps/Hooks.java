@@ -4,10 +4,14 @@ import co.edu.javeriana.pages.*;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
+import java.io.ByteArrayInputStream;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 /**
  * Hooks — Gestiona el ciclo de vida del WebDriver (Before/After).
@@ -47,6 +51,10 @@ public class Hooks {
     public void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
             System.out.println("❌ FAILED: " + scenario.getName());
+            if (driver != null) {
+                byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                Allure.addAttachment("Failed Screenshot", new ByteArrayInputStream(screenshot));
+            }
         } else {
             System.out.println("✅ PASSED: " + scenario.getName());
         }
